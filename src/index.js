@@ -4,6 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 import configureStore from "./redux/store";
+import {BrowserRouter} from "react-router-dom";
 
 //Using lazy importing
 const LazyApp =lazy(() => import('./App'))
@@ -14,7 +15,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <LazyApp />
+      <BrowserRouter>
+          <LazyApp />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

@@ -1,9 +1,9 @@
-import {lazy} from "react";
+import Dashboard from "../views/Dashboard/Dashboard";
 
 const dashboardRoutes = [
     {
-        path: 'dashboard',
-        component: lazy(() => import('../views/Dashboard/Dashboard'))
+        path: '/',
+        component: <Dashboard />
     },
 ]
 
