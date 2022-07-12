@@ -42,7 +42,8 @@ const Dashboard = () => {
 
         if (image) {
             return <Label htmlFor="image">
-                <img width="250px" height="200px" className="object-fit scalable radius-10"
+                <p className="text-large text-black-50 font-bold mt-1">Upload Fruit image</p>
+                <img width='350px' height='240px' className="object-fit scalable radius-10"
                      src={URL.createObjectURL(new Blob(harvestBinaryData(image), {type: "application/zip"}))}/>
             </Label>
         } else {
@@ -50,8 +51,8 @@ const Dashboard = () => {
                 <div className="main-cat-upload-card flex-column">
                     <p className="text-large text-black-50 font-bold mt-1">Upload Fruit image</p>
                     <img
-                        className="radius-10"
-                        width='40%' src='http://www.ateliercaraco.com/_wp-content/plugins/widgetkit/assets/images/content-placeholder.svg'/>
+                        className="radius-10 object-fit"
+                        width='350px' height='240px' src='http://www.ateliercaraco.com/_wp-content/plugins/widgetkit/assets/images/content-placeholder.svg'/>
                 </div>
             </Label>
         }
