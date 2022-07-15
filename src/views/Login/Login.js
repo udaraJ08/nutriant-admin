@@ -77,7 +77,9 @@ function Login() {
                                 </Col>
                             </Row>
                             <div className='mt-4 d-center'>
-                                <button disabled={loginLoader} className={`btn ${styles.clickable} ${styles.signInButton}`}>
+                                <button
+                                    type='submit'
+                                    disabled={loginLoader} className={`btn ${styles.clickable} ${styles.signInButton}`}>
                                     {loginLoader ? <Spinner className='text-small'/> : 'Sign In' }
                                 </button>
                             </div>
