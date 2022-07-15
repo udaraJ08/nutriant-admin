@@ -2,25 +2,28 @@ import React, {useState} from "react";
 import {Card, CardBody, CardHeader, Col, Form, Input, Label, Row} from "reactstrap";
 import {useFormik} from "formik";
 import '../../assets/dashboard.css'
+import {useDispatch} from "react-redux";
+import {createFruitListen} from "./actions";
 
 const Dashboard = () => {
 
     const [image, setImage] = useState()
 
+    const dispatch = useDispatch()
+
     const validate = (values) => {
-        console.log(values)
+        dispatch(createFruitListen({...values, image}))
     }
 
     const formik = useFormik({
         initialValues: {
             name: '',
-            image: '',
             description: '',
-            subtitle: '',
+            subTitle: '',
             gen_name: '',
             gen_genes: '',
             gen_family: '',
-            order: '',
+            gen_order: '',
             carbohydrates: '',
             protein: '',
             fat: '',
@@ -89,11 +92,11 @@ const Dashboard = () => {
                             <Col lg={3}>
                                 <Label>subtitle</Label>
                                 <Input
-                                    id="subtitle"
-                                    name='subtitle'
+                                    id="subTitle"
+                                    name='subTitle'
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
-                                    value={formik.values.subtitle}
+                                    value={formik.values.subTitle}
                                 />
                             </Col>
                         </Row>
@@ -149,11 +152,11 @@ const Dashboard = () => {
                             <Col lg={3} className="mt-2">
                                 <Label>Order</Label>
                                 <Input
-                                    id="order"
-                                    name='order'
+                                    id="gen_order"
+                                    name='gen_order'
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
-                                    value={formik.values.order}
+                                    value={formik.values.gen_order}
                                 />
                             </Col>
                         </Row>
