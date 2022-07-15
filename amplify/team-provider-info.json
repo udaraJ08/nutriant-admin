@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nutriantadmin-dev-72525-authRole",
+      "UnauthRoleArn": "arn:aws:iam::335469262340:role/amplify-nutriantadmin-dev-72525-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::335469262340:role/amplify-nutriantadmin-dev-72525-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-nutriantadmin-dev-72525-deployment",
+      "UnauthRoleName": "amplify-nutriantadmin-dev-72525-unauthRole",
+      "StackName": "amplify-nutriantadmin-dev-72525",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:335469262340:stack/amplify-nutriantadmin-dev-72525/32fd2810-03e1-11ed-a41d-0a5ed3652740",
+      "AmplifyAppId": "dpd74jcs4i4f1"
+    },
+    "categories": {
+      "auth": {
+        "nutriantadmin42a3bb84": {}
+      }
+    }
+  }
+}
