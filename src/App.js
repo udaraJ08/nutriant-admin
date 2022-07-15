@@ -11,7 +11,6 @@ Amplify.configure(awsconfig)
 function App() {
     return (
         <div className="App">
-            <TopNavigation />
             <div className="p-3">
                 <Routes>
                     {routes.map((e, index) => {
