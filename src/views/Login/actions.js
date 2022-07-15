@@ -25,3 +25,19 @@ export const handleLoginLoader = (payload) => {
         payload
     }
 }
+
+//Use this to logout
+export const logoutListen = (navigate) => {
+
+    return {
+        type: actionTypes.LOGOUT_LISTEN,
+        navigate
+    }
+}
+
+export const logoutSuccess = () => {
+
+    return {
+        type: actionTypes.LOGOUT_SUCCESS
+    }
+}

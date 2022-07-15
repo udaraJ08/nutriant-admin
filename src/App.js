@@ -19,7 +19,7 @@ function App() {
             return routes.map((e, index) => {
                 return <Route key={index} path={e.path} element={e.component}/>
             })
-        } else navigate('/')
+        }
     }
 
     return (

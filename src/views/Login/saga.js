@@ -15,6 +15,16 @@ const loginAsync = async (username, password, navigate) => {
     })
 }
 
+const logoutUserAsync = async (navigate) => {
+
+    return await Auth.signOut().then(() => {
+        window.localStorage.removeItem("user")
+        navigate("/")
+    }).catch(err => {
+        console.error(err.message)
+    })
+}
+
 ////////////////
 //ASYNC finished
 ////////////////
@@ -33,8 +43,20 @@ export function* loginSagasCB(action) {
     }
 }
 
+export function* logoutCB(action) {
+
+    const {navigate} = action
+
+    try {
+        yield call(logoutUserAsync, navigate)
+    } catch (err) {
+        console.error(err.message)
+    }
+}
+
 function* watchLoginSagas() {
     yield takeLatest(actionTypes.LOGIN_LISTEN, loginSagasCB)
+    yield takeLatest(actionTypes.LOGOUT_LISTEN, logoutCB)
 }
 
 const loginSagas = [watchLoginSagas]
