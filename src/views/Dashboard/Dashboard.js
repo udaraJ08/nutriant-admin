@@ -4,6 +4,7 @@ import {useFormik} from "formik";
 import '../../assets/dashboard.css'
 import {useDispatch} from "react-redux";
 import {createFruitListen} from "./actions";
+import TopNavigation from "../../components/TopNavigation/TopNavigation";
 
 const Dashboard = () => {
 
@@ -62,6 +63,7 @@ const Dashboard = () => {
     }
 
     return <div>
+        <TopNavigation />
         <div className="mt-4">
             <Row className='mb-4'>
                 <Col>
