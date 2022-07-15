@@ -46,14 +46,15 @@ function Login() {
             <div className={`container-fluid d-center ${styles.mainContainer}`}>
                 <div className={`row ${styles.rowContainer}`}>
                     <div className={`col d-flex flex-column justify-content-center align-items-center position-relative`}>
-                        <div className={'mb-3 d-flex flex-row justify-content-center align-items-center gap-2'}>
-                            <h1 className={styles.hiTitle}>Hello!</h1>
+                        <div className='d-flex flex-row justify-content-center align-items-center gap-2'>
+                            <h1 className={`${styles.hiTitle} f-Staatliches`}>NUTRIANT</h1>
                         </div>
-                        <h2 className={styles.title}>Sign in to your account to continue...</h2>
+                        <h2 className={`${styles.title} f-courgette`}>Fresh fruits make healthy lives</h2>
                         <Form className={`p-4 ${styles.form}`} onSubmit={formik.handleSubmit}>
                             <Row>
                                 <Col lg={12}>
                                     <Input
+                                        className={`${styles.input}`}
                                         value={formik.values.userName}
                                         name="userName"
                                         id="userName"
@@ -66,6 +67,7 @@ function Login() {
                             <Row className="mt-3">
                                 <Col lg={12}>
                                     <Input
+                                        className={`${styles.input}`}
                                         type='password'
                                         value={formik.values.password}
                                         name="password"
@@ -84,7 +86,7 @@ function Login() {
                                 </button>
                             </div>
                         </Form>
-                        <div className='position-absolute radius-100' style={{bottom: -80}}>
+                        <div className='position-absolute radius-100' style={{bottom: -90}}>
                             <div className={`p-5 ${styles.insetShadowRound}`}></div>
                         </div>
                     </div>
