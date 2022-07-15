@@ -1,0 +1,7 @@
+.bg-header {
+    background-image: linear-gradient(to right bottom, #3384ff, #467dff, #5a74ff, #6d6bff, #805fff);
+}
+
+.text-header-topic {
+    font-size: 25px;
+}

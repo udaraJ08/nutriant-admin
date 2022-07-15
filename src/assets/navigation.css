@@ -1,4 +1,7 @@
 .navigation {
-    height: 50px;
-    box-shadow: 0 2px 4px #8d8d8d;
+    height: 70px;
+    box-shadow: 0 2px 20px #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
