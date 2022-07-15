@@ -1,16 +1,19 @@
 import React, {useState} from "react";
-import {Card, CardBody, CardHeader, Col, Form, Input, Label, Row} from "reactstrap";
+import {Card, CardBody, CardHeader, Col, Form, Input, Label, Row, Spinner} from "reactstrap";
 import {useFormik} from "formik";
 import '../../assets/dashboard.css'
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {createFruitListen} from "./actions";
 import TopNavigation from "../../components/TopNavigation/TopNavigation";
+import fruitReducer from "./reducer";
 
 const Dashboard = () => {
 
     const [image, setImage] = useState()
 
     const dispatch = useDispatch()
+
+    const {createFruitLoader} = useSelector(state => state.fruitReducer)
 
     const validate = (values) => {
         dispatch(createFruitListen({...values, image}))
@@ -222,7 +225,9 @@ const Dashboard = () => {
                     </CardBody>
                 </Card>
                 <div className="mt-2 w-100 d-flex justify-content-end">
-                    <button className="btn btn-primary text-header-topic f-Staatliches">SUBMIT</button>
+                    <button disabled={createFruitLoader} className="btn btn-primary text-header-topic f-Staatliches">{
+                        createFruitLoader ? <Spinner /> : 'SUBMIT'
+                    }</button>
                 </div>
             </Form>
         </div>
