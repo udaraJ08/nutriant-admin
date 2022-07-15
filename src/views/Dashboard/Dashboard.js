@@ -64,7 +64,7 @@ const Dashboard = () => {
 
     return <div>
         <TopNavigation />
-        <div className="mt-4">
+        <div className="mt-4 p-3">
             <Row className='mb-4'>
                 <Col>
                     <Label htmlFor='image'>
