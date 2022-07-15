@@ -4,13 +4,16 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useFormik} from 'formik';
 import {fireAlert} from '../../utils/utils';
 import {ERROR} from '../../utils/consts';
-import {Col, Form, Input, Row} from 'reactstrap';
+import {Col, Form, Input, Row, Spinner} from 'reactstrap';
 import {useNavigate} from "react-router-dom";
 import {loginListen} from "./actions";
+import loginReducer from "./reducer";
 
 function Login() {
 
     const navigate = useNavigate()
+
+    const {loginLoader} = useSelector(state => state.loginReducer)
 
     // dispatcher
     const dispatch = useDispatch();
@@ -74,8 +77,8 @@ function Login() {
                                 </Col>
                             </Row>
                             <div className='mt-4 d-center'>
-                                <button className={`btn ${styles.clickable} ${styles.signInButton}`}>
-                                    Sign In
+                                <button disabled={loginLoader} className={`btn ${styles.clickable} ${styles.signInButton}`}>
+                                    {loginLoader ? <Spinner className='text-small'/> : 'Sign In' }
                                 </button>
                             </div>
                         </Form>

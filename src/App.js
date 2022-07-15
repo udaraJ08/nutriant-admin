@@ -24,7 +24,7 @@ function App() {
 
     return (
         <div className="App">
-            <div className="p-3">
+            <div>
                 <Routes>
                     <Route path={'/'} element={<Login/>}/>
                     <Route path={'*'} element={<Login/>}/>
