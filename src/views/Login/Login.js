@@ -6,6 +6,7 @@ import {fireAlert} from '../../utils/utils';
 import {ERROR} from '../../utils/consts';
 import {Col, Form, Input, Row} from 'reactstrap';
 import {useNavigate} from "react-router-dom";
+import {loginListen} from "./actions";
 
 function Login() {
 
@@ -34,7 +35,7 @@ function Login() {
             fireAlert('Oops', 'Password should be added!', ERROR);
             return;
         }
-        console.log(values)
+        dispatch(loginListen(values, navigate))
     };
 
     return (
@@ -62,6 +63,7 @@ function Login() {
                             <Row className="mt-3">
                                 <Col lg={12}>
                                     <Input
+                                        type='password'
                                         value={formik.values.password}
                                         name="password"
                                         id="password"

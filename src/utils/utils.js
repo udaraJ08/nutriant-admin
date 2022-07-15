@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2';
-import axios from 'axios';
+import {Auth} from "aws-amplify";
 
 export const fireAlert = (title, text, state) => {
   Swal.fire({
@@ -9,28 +9,9 @@ export const fireAlert = (title, text, state) => {
   });
 };
 
-export const createRequestSignIn = () => {
-  return axios.create({
-    // eslint-disable-next-line no-undef
-    baseURL: process.env.REACT_APP_BASE_URL + '/',
-    headers: {
-      'Content-type': 'application/json',
-    },
-  });
-};
-
-export function createRequest(contentType) {
-  //const user = yield select((state) => state.signInReducer.currentUser);
-  const user = localStorage.getItem('currentUser');
-  const idToken = JSON.parse(user).stsTokenManager.accessToken;
-  return axios.create({
-    // eslint-disable-next-line no-undef
-    baseURL: process.env.REACT_APP_BASE_URL + '/',
-    headers: {
-      'Content-type': !contentType ? 'application/json' : 'multipart/form-data',
-      Authorization: `Bearer ${idToken}`,
-    },
-  });
+//Use this to get the cognito id token
+export const getIDToken = async () => {
+  return Auth.currentSession().then((res) => res.getIdToken().getJwtToken())
 }
 
 //Use this to harvest binary data of an image
